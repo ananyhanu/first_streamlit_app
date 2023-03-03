@@ -50,5 +50,8 @@ add_my_fruit=my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
 streamlit.header("the fruit load list contain:")
 
 streamlit.header("what fruit do you like to add")
-fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
+fruit_choice = streamlit.text_input('What fruit would you like information about?','jackfruit')
 streamlit.write('thank for adding ', fruit_choice)
+
+import requests
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
